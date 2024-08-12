@@ -1,0 +1,38 @@
+.nav-bar{
+    display:flex;
+    justify-content: space-between;
+    border: 1px solid;
+}
+.logo{
+    width:100px;
+}
+.nav-items{
+    display: flex;
+    margin: 25px 5px;
+    list-style: none;
+    font-size: 18px;
+}
+.nav-items > li{
+    padding: 10px;
+}
+.search {
+    margin: 10px;
+}
+.card-container{
+    width: 200px;
+    background-color: #f0f0f0;
+    padding: 5px;
+    margin: 5px;
+}
+.card-container:hover{
+    cursor: pointer;
+    border: 1px solid;
+}
+.card-image{
+    width: 190px;
+    height: 150px
+}
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
+}
