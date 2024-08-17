@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { useSelector } from "react-redux";
 
 function NavBar() {
-const [login,setLogin] = useState('Login');
+const [login,setLogin] = useState('Logout');
 const navigate = useNavigate();
+const cartItems = useSelector((store)=>store.cart.items);
+console.log(cartItems);
 const onlineStatus = useOnlineStatus();
   return (
     <div className="flex justify-between  shadow-lg">
@@ -17,9 +20,9 @@ const onlineStatus = useOnlineStatus();
       <div>
         <ul className="flex p-4 m-10 gap-5 ">
           <li>Online Status: {onlineStatus ? "✅" : "🔴"}</li>
-          <li onClick={() => navigate("/")}>Home</li>
+          <li onClick={() => navigate("/")} className="cursor-pointer">Home</li>
           <li onClick={() => navigate("/about")}>About</li>
-          <li>Cart</li>
+          <li className="hover: cursor-pointer" onClick={() => navigate("/cart")}>Cart({cartItems.length})</li>
           <li>
             <button
               onClick={() =>

@@ -7,16 +7,16 @@ function Body() {
   useEffect(() => {
     fetchData();
     //fetchPost();
-    console.log("useEffect");
+    ("useEffect");
   }, []);
-  console.log("body");
+  ("body");
   async function post(request) {
     try {
       const response = await fetch(request);
       const data = await response.json();
-      console.log(data);
+      data;
     } catch (err) {
-      console.log(err);
+      err;
     }
   }
   function fetchPost() {
@@ -50,6 +50,7 @@ function Body() {
     );
     const data = await response.json();
     setLoaded(true);
+    data.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
     setRestaurants(
       data.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
     );
